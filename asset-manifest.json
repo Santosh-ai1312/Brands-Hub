@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Brands-Hub/static/css/main.9b6ce4e9.css",
+    "main.js": "/Brands-Hub/static/js/main.e2d0c114.js",
+    "index.html": "/Brands-Hub/index.html",
+    "main.9b6ce4e9.css.map": "/Brands-Hub/static/css/main.9b6ce4e9.css.map",
+    "main.e2d0c114.js.map": "/Brands-Hub/static/js/main.e2d0c114.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9b6ce4e9.css",
+    "static/js/main.e2d0c114.js"
+  ]
+}
