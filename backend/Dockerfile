@@ -4,8 +4,8 @@ WORKDIR /app
 
 COPY . .
 
-RUN mvn clean package -DskipTests
+RUN mvn package -DskipTests
 
 EXPOSE 8080
 
-CMD ["java", "-jar", "target/brandshub-backend-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "target/brandshub-backend-1.0.0.jar"]
