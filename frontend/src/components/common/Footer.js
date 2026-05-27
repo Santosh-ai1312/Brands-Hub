@@ -36,9 +36,9 @@ const Footer = () => (
         </div>
         <div className="footer-col">
           <h4>Contact</h4>
-          <a href="#">📞 +91 98765 43210</a>
+          <a href="#">📞 +91 9000901514</a>
           <a href="#">✉️ hello@brandshub.in</a>
-          <a href="#">📍 Bangalore, India</a>
+          <a href="#">📍 Visakhapatnam, India</a>
         </div>
       </div>
       <div className="footer-bottom">
