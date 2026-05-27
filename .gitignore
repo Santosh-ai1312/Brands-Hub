@@ -1,0 +1,17 @@
+# Node modules
+node_modules/
+
+# React build
+build/
+dist/
+
+# Java
+target/
+*.class
+
+# IDE
+.vscode/
+.idea/
+
+# Environment
+.env
