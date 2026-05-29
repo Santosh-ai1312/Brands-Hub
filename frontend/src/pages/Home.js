@@ -29,39 +29,113 @@ const Home = () => {
     <>
       <Navbar />
       <main style={{ paddingTop: '68px' }}>
-
-        {/* HERO */}
-  <div
+{/* HERO */}
+<section
   style={{
-    position: 'relative',
-    overflow: 'hidden',
-    minHeight: '100%'
+    minHeight: '90vh',
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr'
   }}
 >
-  <img
-    src="https://via.placeholder.com/800x1000.png?text=BRANDS+HUB"
-    alt="Hero"
-    style={{
-      width: '100%',
-      height: '100%',
-      objectFit: 'cover'
-    }}
-  />
-
+  {/* LEFT SIDE */}
   <div
     style={{
-      position: 'absolute',
-      bottom: '3rem',
-      left: '-1rem',
-      background: '#FFD600',
-      color: '#000',
-      padding: '0.8rem 1.5rem',
-      fontWeight: 'bold'
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      padding: '4rem 5rem',
+      background: '#000'
     }}
   >
-    Free Shipping Over ₹999
+    <div
+      style={{
+        color: '#FFD600',
+        letterSpacing: '0.3em',
+        marginBottom: '1rem',
+        fontSize: '0.8rem'
+      }}
+    >
+      NEW COLLECTION 2026
+    </div>
+
+    <h1
+      style={{
+        fontSize: '6rem',
+        lineHeight: '0.9',
+        fontWeight: 'bold',
+        marginBottom: '1.5rem'
+      }}
+    >
+      DRESS TO
+      <br />
+      <span style={{ color: '#FFD600' }}>
+        IMPRESS
+      </span>
+    </h1>
+
+    <p
+      style={{
+        color: '#999',
+        maxWidth: '500px',
+        marginBottom: '2rem'
+      }}
+    >
+      Premium men's fashion crafted for the bold.
+      Style that speaks before you do.
+    </p>
+
+    <div style={{ display: 'flex', gap: '1rem' }}>
+      <Link to="/shop" className="btn btn-primary">
+        SHOP NOW
+      </Link>
+
+      <Link to="/shop" className="btn btn-outline">
+        NEW ARRIVALS
+      </Link>
+    </div>
   </div>
-</div>
+
+  {/* RIGHT SIDE */}
+  <div
+    style={{
+      position: 'relative',
+      overflow: 'hidden'
+    }}
+  >
+      <img
+        src="https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg"
+        alt="Fashion Model"
+        style={{
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover'
+        }}
+      />
+
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          background:
+            'linear-gradient(to top, rgba(0,0,0,.4), transparent)'
+        }}
+      />
+
+      <div
+        style={{
+          position: 'absolute',
+          bottom: '30px',
+          left: '30px',
+          background: '#FFD600',
+          color: '#000',
+          padding: '10px 20px',
+          fontWeight: 'bold'
+        }}
+      >
+        FREE SHIPPING OVER ₹999
+      </div>
+  </div>
+</section>
 
         {/* MARQUEE */}
         <div style={{ background: 'var(--yellow)', overflow: 'hidden', height: 40, display: 'flex', alignItems: 'center' }}>
