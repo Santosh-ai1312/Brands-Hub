@@ -31,34 +31,68 @@ const Home = () => {
       <main style={{ paddingTop: '68px' }}>
 
         {/* HERO */}
-        <section style={{
-          minHeight: 'calc(100vh - 68px)',
-          display: 'grid', gridTemplateColumns: '1fr 1fr'
-        }}>
-          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '4rem 3rem 4rem 5rem' }}>
-            <div style={{ fontFamily: "'Barlow Condensed',sans-serif", fontSize: '0.75rem', letterSpacing: '0.3em', textTransform: 'uppercase', color: 'var(--yellow)', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
-              <span style={{ width: 40, height: 1, background: 'var(--yellow)', display: 'inline-block' }}></span>
-              New Collection 2024
-            </div>
-            <h1 style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 'clamp(4rem,8vw,8rem)', lineHeight: 0.9, marginBottom: '1.5rem' }}>
-              DRESS TO<br />
-              <span style={{ color: 'var(--yellow)' }}>IMPRESS</span>
-            </h1>
-            <p style={{ color: 'var(--muted)', maxWidth: 360, marginBottom: '2.5rem', fontWeight: 300, lineHeight: 1.7 }}>
-              Discover premium men's fashion crafted for the bold, the modern, and the unstoppable. Style that speaks before you do.
-            </p>
-            <div style={{ display: 'flex', gap: '1rem' }}>
-              <Link to="/shop" className="btn btn-primary btn-lg">Shop Now</Link>
-              <Link to="/shop?category=JACKETS" className="btn btn-secondary btn-lg">New Arrivals</Link>
-            </div>
-          </div>
-          <div style={{ background: 'var(--gray)', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden' }}>
-            <div style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: '12rem', color: 'rgba(255,214,0,0.04)', letterSpacing: '-0.05em' }}>BH</div>
-            <div style={{ position: 'absolute', bottom: '3rem', left: '-1rem', background: 'var(--yellow)', color: 'var(--black)', padding: '0.8rem 1.5rem', fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 700, fontSize: '0.8rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
-              Free Shipping Over ₹999
-            </div>
-          </div>
-        </section>
+       <div
+  style={{
+    position: 'relative',
+    overflow: 'hidden',
+    minHeight: '100%'
+  }}
+>
+  <img
+    src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80"
+    alt="Brands Hub Fashion"
+    style={{
+      width: '100%',
+      height: '100%',
+      objectFit: 'cover',
+      position: 'absolute',
+      inset: 0
+    }}
+  />
+
+  <div
+    style={{
+      position: 'absolute',
+      inset: 0,
+      background:
+        'linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.25))'
+    }}
+  />
+
+  <div
+    style={{
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%,-50%)',
+      fontFamily: "'Bebas Neue',sans-serif",
+      fontSize: '10rem',
+      color: 'rgba(255,214,0,0.08)',
+      zIndex: 2
+    }}
+  >
+    BH
+  </div>
+
+  <div
+    style={{
+      position: 'absolute',
+      bottom: '3rem',
+      left: '-1rem',
+      background: 'var(--yellow)',
+      color: 'var(--black)',
+      padding: '0.8rem 1.5rem',
+      fontFamily: "'Barlow Condensed',sans-serif",
+      fontWeight: 700,
+      fontSize: '0.8rem',
+      letterSpacing: '0.1em',
+      textTransform: 'uppercase',
+      zIndex: 3
+    }}
+  >
+    Free Shipping Over ₹999
+  </div>
+</div>
 
         {/* MARQUEE */}
         <div style={{ background: 'var(--yellow)', overflow: 'hidden', height: 40, display: 'flex', alignItems: 'center' }}>
@@ -76,33 +110,128 @@ const Home = () => {
         <style>{`@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }`}</style>
 
         {/* CATEGORIES */}
-        <section className="section">
-          <div className="container">
-            <div className="section-label">Browse By Category</div>
-            <h2 className="section-title" style={{ marginBottom: '2.5rem' }}>SHOP THE COLLECTION</h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 1, background: 'var(--border)' }}>
-              {[
-                { name: 'Shirts', cat: 'SHIRTS', sub: 'Formal & Casual', icon: '👔' },
-                { name: 'T-Shirts', cat: 'T_SHIRTS', sub: 'Graphic & Plain', icon: '👕' },
-                { name: 'Jeans', cat: 'JEANS', sub: 'Slim & Relaxed Fit', icon: '👖' },
-                { name: 'Jackets', cat: 'JACKETS', sub: 'Bomber & Leather', icon: '🧥' },
-              ].map(cat => (
-                <Link key={cat.cat} to={`/shop?category=${cat.cat}`}
-                  style={{ background: 'var(--gray)', aspectRatio: '3/4', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: '1.5rem', position: 'relative', overflow: 'hidden', transition: 'transform 0.3s' }}
-                  onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.02)'}
-                  onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
-                >
-                  <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-60%)', fontSize: '5rem', opacity: 0.06 }}>{cat.icon}</div>
-                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 60%)' }}></div>
-                  <div style={{ position: 'relative', zIndex: 2 }}>
-                    <div style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: '1.8rem' }}>{cat.name}</div>
-                    <div style={{ fontSize: '0.75rem', color: 'var(--yellow)', fontFamily: "'Barlow Condensed',sans-serif", letterSpacing: '0.1em' }}>{cat.sub}</div>
-                  </div>
-                </Link>
-              ))}
+<section className="section">
+  <div className="container">
+    <div className="section-label">Browse By Category</div>
+
+    <h2
+      className="section-title"
+      style={{ marginBottom: '2.5rem' }}
+    >
+      SHOP THE COLLECTION
+    </h2>
+
+    <div
+      style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(4,1fr)',
+        gap: '1px',
+        background: 'var(--border)'
+      }}
+    >
+      {[
+        {
+          name: 'Shirts',
+          cat: 'SHIRTS',
+          sub: 'Formal & Casual',
+          image:
+            'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf'
+        },
+        {
+          name: 'T-Shirts',
+          cat: 'T_SHIRTS',
+          sub: 'Graphic & Plain',
+          image:
+            'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab'
+        },
+        {
+          name: 'Jeans',
+          cat: 'JEANS',
+          sub: 'Slim & Relaxed Fit',
+          image:
+            'https://images.unsplash.com/photo-1542272604-787c3835535d'
+        },
+        {
+          name: 'Jackets',
+          cat: 'JACKETS',
+          sub: 'Bomber & Leather',
+          image:
+            'https://images.unsplash.com/photo-1551028719-00167b16eac5'
+        }
+      ].map((cat) => (
+        <Link
+          key={cat.cat}
+          to={`/shop?category=${cat.cat}`}
+          style={{
+            background: 'var(--gray)',
+            aspectRatio: '3/4',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'flex-end',
+            padding: '1.5rem',
+            position: 'relative',
+            overflow: 'hidden',
+            transition: 'transform 0.3s'
+          }}
+          onMouseEnter={(e) =>
+            (e.currentTarget.style.transform = 'scale(1.02)')
+          }
+          onMouseLeave={(e) =>
+            (e.currentTarget.style.transform = 'scale(1)')
+          }
+        >
+          <img
+            src={cat.image}
+            alt={cat.name}
+            style={{
+              position: 'absolute',
+              inset: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover'
+            }}
+          />
+
+          <div
+            style={{
+              position: 'absolute',
+              inset: 0,
+              background:
+                'linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 100%)'
+            }}
+          />
+
+          <div
+            style={{
+              position: 'relative',
+              zIndex: 2
+            }}
+          >
+            <div
+              style={{
+                fontFamily: "'Bebas Neue',sans-serif",
+                fontSize: '1.8rem'
+              }}
+            >
+              {cat.name}
+            </div>
+
+            <div
+              style={{
+                fontSize: '0.75rem',
+                color: 'var(--yellow)',
+                fontFamily: "'Barlow Condensed',sans-serif",
+                letterSpacing: '0.1em'
+              }}
+            >
+              {cat.sub}
             </div>
           </div>
-        </section>
+        </Link>
+      ))}
+    </div>
+  </div>
+</section>
 
         {/* FEATURED PRODUCTS */}
         {featured.length > 0 && (
