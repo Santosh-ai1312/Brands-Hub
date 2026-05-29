@@ -44,46 +44,51 @@ public class DataSeeder {
                 System.out.println("=================================");
             }
 
-            // Create Sample Products
+            // Create Products Only Once
             if (productRepository.count() == 0) {
 
+                // Shirts
                 createProducts(
                         productRepository,
                         "Premium Shirt ",
                         "Allen Solly",
                         Product.Category.SHIRTS,
-                        10);
+                        10,
+                        "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf"
+                );
 
+                // T-Shirts
                 createProducts(
                         productRepository,
                         "Cotton T-Shirt ",
                         "Nike",
                         Product.Category.T_SHIRTS,
-                        10);
+                        10,
+                        "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab"
+                );
 
+                // Jeans
                 createProducts(
                         productRepository,
                         "Slim Fit Jeans ",
                         "Levis",
                         Product.Category.JEANS,
-                        10);
+                        10,
+                        "https://images.unsplash.com/photo-1542272604-787c3835535d"
+                );
 
+                // Jackets
                 createProducts(
                         productRepository,
                         "Winter Jacket ",
                         "Puma",
                         Product.Category.JACKETS,
-                        10);
-
-                createProducts(
-                        productRepository,
-                        "Running Shoes ",
-                        "Adidas",
-                        Product.Category.FOOTWEAR,
-                        10);
+                        10,
+                        "https://images.unsplash.com/photo-1551028719-00167b16eac5"
+                );
 
                 System.out.println("=================================");
-                System.out.println("50 SAMPLE PRODUCTS CREATED");
+                System.out.println("40 SAMPLE PRODUCTS CREATED");
                 System.out.println("=================================");
             }
         };
@@ -94,7 +99,8 @@ public class DataSeeder {
             String prefix,
             String brand,
             Product.Category category,
-            int count) {
+            int count,
+            String imageUrl) {
 
         for (int i = 1; i <= count; i++) {
 
@@ -104,15 +110,18 @@ public class DataSeeder {
 
             product.setDescription(
                     "Premium quality " + prefix + i +
-                    " designed for comfort and style.");
+                    " designed for comfort and style."
+            );
 
             product.setBrand(brand);
 
             product.setPrice(
-                    BigDecimal.valueOf(999 + (i * 100)));
+                    BigDecimal.valueOf(999 + (i * 100))
+            );
 
             product.setOriginalPrice(
-                    BigDecimal.valueOf(1499 + (i * 100)));
+                    BigDecimal.valueOf(1499 + (i * 100))
+            );
 
             product.setStock(100);
 
@@ -125,17 +134,18 @@ public class DataSeeder {
             product.setActive(true);
 
             product.setSizes(
-                    Arrays.asList("S", "M", "L", "XL"));
+                    Arrays.asList("S", "M", "L", "XL")
+            );
 
             product.setColors(
-                    Arrays.asList("Black", "White", "Blue"));
+                    Arrays.asList("Black", "White", "Blue")
+            );
 
             product.setRating(4.5);
 
             product.setReviewCount(50 + i);
 
-            product.setImageUrl(
-                    "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab");
+            product.setImageUrl(imageUrl);
 
             repo.save(product);
         }
