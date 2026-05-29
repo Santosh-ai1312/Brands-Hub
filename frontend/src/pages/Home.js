@@ -31,7 +31,7 @@ const Home = () => {
       <main style={{ paddingTop: '68px' }}>
 
         {/* HERO */}
-       <div
+  <div
   style={{
     position: 'relative',
     overflow: 'hidden',
@@ -39,55 +39,24 @@ const Home = () => {
   }}
 >
   <img
-    src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80"
-    alt="Brands Hub Fashion"
+    src="https://via.placeholder.com/800x1000.png?text=BRANDS+HUB"
+    alt="Hero"
     style={{
       width: '100%',
       height: '100%',
-      objectFit: 'cover',
-      position: 'absolute',
-      inset: 0
+      objectFit: 'cover'
     }}
   />
-
-  <div
-    style={{
-      position: 'absolute',
-      inset: 0,
-      background:
-        'linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.25))'
-    }}
-  />
-
-  <div
-    style={{
-      position: 'absolute',
-      top: '50%',
-      left: '50%',
-      transform: 'translate(-50%,-50%)',
-      fontFamily: "'Bebas Neue',sans-serif",
-      fontSize: '10rem',
-      color: 'rgba(255,214,0,0.08)',
-      zIndex: 2
-    }}
-  >
-    BH
-  </div>
 
   <div
     style={{
       position: 'absolute',
       bottom: '3rem',
       left: '-1rem',
-      background: 'var(--yellow)',
-      color: 'var(--black)',
+      background: '#FFD600',
+      color: '#000',
       padding: '0.8rem 1.5rem',
-      fontFamily: "'Barlow Condensed',sans-serif",
-      fontWeight: 700,
-      fontSize: '0.8rem',
-      letterSpacing: '0.1em',
-      textTransform: 'uppercase',
-      zIndex: 3
+      fontWeight: 'bold'
     }}
   >
     Free Shipping Over ₹999
